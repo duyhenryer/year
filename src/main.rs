@@ -16,10 +16,10 @@ fn main() -> io::Result<()> {
     let progress_bar_of_this_year = generate_progress_bar(progress_of_this_year);
 
     let readme = format!(
-        "\n\
-        ⏳ Year Progress {} {:.2} %\n\
+        "```\n\
+        ⏳ Year Progress {} {:.2} %\n\n\
         ⏰ {}\n\n\
-        ",
+        ```",
         progress_bar_of_this_year,
         progress_of_this_year * 100.0,
         Utc::now().to_rfc2822()
