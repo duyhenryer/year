@@ -2,7 +2,7 @@ name: Year Progress
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'  # This schedules the workflow to run at midnight UTC every day
+    - cron: '0 0 * * 1'  # This schedules the workflow to run at midnight UTC every day
 jobs:
   build:
     runs-on: ubuntu-latest
