@@ -11,21 +11,18 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v2
-
+      - uses: actions/checkout@v4
       - name: Set up Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
-
+        uses: dtolnay/rust-toolchain@stable  
       - name: Build
         run: cargo build --release
-
       - name: Run year progress
         run: ./target/release/year
-
       - name: Commit change & Push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "bot: Update README.md"
+          commit_message: "Skip[bot]: Update README.md"
+          commit_user_name: "duynhbot"
+          commit_user_email: "duynhbot@users.noreply.github.com"
+          file_pattern: '*.md'
+          skip_dirty_check: true
